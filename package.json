@@ -1,0 +1,42 @@
+{
+  "name": "grunt-hackmyresume",
+  "description": "Grunt plugin for HackMyResume.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/hacksalot/grunt-hackmyresume",
+  "author": {
+    "name": "hacksalot",
+    "email": "hacksalot@indevious.com",
+    "url": "https://github.com/hacksalot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hacksalot/grunt-hackmyresume.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hacksalot/grunt-hackmyresume/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/hacksalot/grunt-hackmyresume/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.9.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt": "~0.4.5"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
