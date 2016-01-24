@@ -1,6 +1,6 @@
 # grunt-hackmyresume
 
-> Grunt plugin for HackMyResume.
+> Grunt plugin for [HackMyResume](https://github.com/hacksalot/HackMyResume).
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
@@ -24,61 +24,112 @@ In your project's Gruntfile, add a section named `hackmyresume` to the data obje
 
 ```js
 grunt.initConfig({
+
+  // Run HackMyResume!
   hackmyresume: {
     options: {
-      // Task-specific options go here.
+      theme: 'compact'
     },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
-  },
+    main: {
+      src: 'path/to/resume.json',
+      dest: 'path/to/generated/resume.all'
+    }
+  }
+
 });
 ```
 
+
 ### Options
 
-#### options.separator
+The full HackMyResume options model is supported. A few of the more commonly
+used options are:
+
+#### options.theme
 Type: `String`
-Default value: `',  '`
+Default value: `'modern'`
 
-A string value that is used to do something with whatever.
+A string describing the resume theme to use. Can be either:
 
-#### options.punctuation
+- The name of a predefined FRESH theme (`modern`, `compact`, `positive`,
+  `awesome`, or `basis`)
+- The path to a locally-installed theme (for ex,
+  `node_modules/jsonresume-theme-classy`)
+
+#### options.css
 Type: `String`
-Default value: `'.'`
+Default value: `'embed'`
 
-A string value that is used to do something else with whatever else.
+Whether CSS files should be linked (`link`) or embedded (`embed`) via `<link>`
+or `<style>` tags, respectively.
+
+#### options.pdf
+Type: `String`
+Default value: `'wkhtmltopdf'`
+
+The name of the underlying PDF generation engine to use for the PDF version of
+the resume (if any). Can be either `wkhtmltopdf` or `phantom`.
+
+#### options.silent
+Type: `Boolean`
+Default value: `false`
+
+Disable HackMyResume output.
 
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+In this example, the default options are used to generate a single resume to all
+available formats using the default 'modern' theme:
 
 ```js
 grunt.initConfig({
   hackmyresume: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+    options: { }, // No options? No problem.
+    main: {
+      files: {
+        // Will create dest/resume.html, dest/resume.pdf, dest/resume.md, etc.
+        'dest/resume.all': ['src/resume.json'],
+      }
+    }
   },
 });
 ```
 
 #### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+In this example, custom options are used to change the resume theme and the
+method of CSS embedding.
 
 ```js
 grunt.initConfig({
   hackmyresume: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      theme: 'compact', // Set the 'compact' theme
+      css: 'link'       // Use <link> for theme CSS files (HTML formats only)
     },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+    main: {
+      files: {
+        'dest/resume.all': ['src/resume.json'],
+      }
+    }
   },
+});
+```
+
+You can also specify the source and destination files this way:
+
+```js
+grunt.initConfig({
+  hackmyresume: {
+    options: {
+      theme: 'compact',
+      css: 'link'      
+    },
+    main: { // Using .src and .dest instead of files hash
+      src: 'src/resume.json',
+      dest: 'dest/resume.all'      
+    }
+  }
 });
 ```
 
