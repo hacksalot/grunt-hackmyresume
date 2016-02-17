@@ -26,7 +26,7 @@
     "grunt-contrib-jshint": "^0.9.2",
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-nodeunit": "^0.3.3",
-    "hackmyresume": "~1.6.0",
+    "hackmyresume": "*",
     "grunt": "~0.4.5"
   },
   "peerDependencies": {
