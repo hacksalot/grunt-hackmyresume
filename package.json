@@ -15,12 +15,7 @@
   "bugs": {
     "url": "https://github.com/hacksalot/grunt-hackmyresume/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/hacksalot/grunt-hackmyresume/blob/master/LICENSE-MIT"
-    }
-  ],
+  "license": "MIT",
   "engines": {
     "node": ">= 0.10.0"
   },
