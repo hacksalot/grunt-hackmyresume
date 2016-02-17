@@ -1,7 +1,7 @@
 {
   "name": "grunt-hackmyresume",
   "description": "Grunt plugin for HackMyResume.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/hacksalot/grunt-hackmyresume",
   "author": {
     "name": "hacksalot",
@@ -38,6 +38,6 @@
     "grunt": "~0.4.5"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin", "hackmyresume", "resume", "CV", "employment"
   ]
 }
