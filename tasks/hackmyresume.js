@@ -18,8 +18,8 @@ module.exports = function(grunt) {
 
   // Require specific HMR modules
   var HMR = require( 'hackmyresume' );
-  var HMROUT = require( 'hackmyresume/src/cli/out');
-  var HMRERR = require( 'hackmyresume/src/cli/error' );
+  var HMROUT = require( 'hackmyresume/dist/cli/out');
+  var HMRERR = require( 'hackmyresume/dist/cli/error' );
   var _out;
 
   // Register the task
